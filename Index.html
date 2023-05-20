@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Swiggy Clone</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Swiggy Clone</h1>
+    <img src="logo.png" alt="" class="logo">
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Restaurants</a></li>
+        <li><a href="#">Cart</a></li>
+        <li><a href="#">Sign In</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="restaurants">
+    <h2>Popular Restaurants</h2>
+    <div class="restaurant">
+      <img src="r1.jpg" alt="Restaurant 1">
+      <h3>Restaurant 1</h3>
+      <p>Cuisine: Indian</p>
+      <p>Rating: 4.5</p>
+      <button class="order-btn">Order Now</button>
+    </div>
+    <div class="restaurant">
+      <img src="r2.jpg" alt="Restaurant 2">
+      <h3>Restaurant 2</h3>
+      <p>Cuisine: Italian</p>
+      <p>Rating: 4.2</p>
+      <button class="order-btn">Order Now</button>
+    </div>
+    <!-- Add more restaurant listings here -->
+  </section>
+
+  <section id="cart">
+    <h2>Cart</h2>
+    <ul id="cart-items">
+      <!-- Cart items will be dynamically added using JavaScript -->
+    </ul>
+    <button id="checkout-btn">Checkout</button>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
