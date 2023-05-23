@@ -6,25 +6,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign In</title>
     <link rel="stylesheet" href="style.css">
+    <script>
+      // JavaScript code to handle form submission
+      document.querySelector('form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the form from submitting normally
+
+        // Retrieve form data
+        var formData = new FormData(this);
+        
+        // Validate phone number
+        var phoneNumber = formData.get('mobilenumber');
+        if (phoneNumber.length !== 9) {
+          alert('Phone number should be 9 digits');
+          return;
+        }
+        
+        // Send form data to the server using AJAX
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'process.php', true);
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+            // Display success message or perform other actions
+            console.log(xhr.responseText);
+          }
+        };
+        xhr.send(formData);
+      });
+    </script>
 </head>
 <body class="b1">
-    <div  class="log1">
+    <div class="log1">
         <h2 class="head1">Sign Up</h2>
         <form action="Sign Up">
             <label for="firstname">Enter Your First Name :- </label>
-            <input type="text" placeholder="XYZ" required>
+            <input type="text" name="firstname" placeholder="XYZ" required>
             <br><br>
             <label for="lastname">Enter Your Last Name :-</label>
-            <input type="text" placeholder="Choudhary" required>
+            <input type="text" name="lastname" placeholder="Choudhary" required>
             <br><br>
             <label for="mobilenumber">Enter Your Mobile Number :-</label>
-            <input type="number" placeholder="+91 678493485" required>
+            <input type="number" name="mobilenumber" placeholder="+91 678493485" required>
             <br><br>
             <label for="mailId">Enter Your E-mail Id :-</label>
-            <input type="email" placeholder="abcd@gmail.com" required>
+            <input type="email" name="mailId" placeholder="abcd@gmail.com" required>
             <br><br>
             <label for="password">Enter Your Password :-</label>
-            <input type="password" placeholder="******" max="999999" required>
+            <input type="password" name="password" placeholder="******" max="999999" required>
             <br><br>
             <input type="submit" class="sub">
             <input type="reset" class="re">
